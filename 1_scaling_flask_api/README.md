@@ -4,9 +4,12 @@ To get everything started:
 
 `docker compose up -d --build`
 
-Visit the application at:
+Visit the application at the following end-points:
 
-`http://localhost/ping`
+- ping: `http://localhost/ping`
+- news: `http://localhost/news`
+- weather: `http://localhost/weather`
+
 
 Note the ID of the responding container is provided in the "PONG" response.
 
