@@ -1,7 +1,7 @@
 FROM python:3.6
 ENV PYTHONUNBUFFERED 1
 
-RUN mkdir /app_blue
+RUN mkdir /app
 WORKDIR /app
 ADD requirements.txt /app/
 RUN pip install -Ur requirements.txt
