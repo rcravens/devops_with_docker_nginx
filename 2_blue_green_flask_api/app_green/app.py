@@ -22,18 +22,8 @@ def json_response(data):
 @app.route('/')
 @app.route('/index')
 def index():
-    try:
-        f = open('/app_blue/color.txt')
-        color = f.read()
-        f.close()
-    except:
-        color = 'unknown'
-
-    color = color.strip().upper()
-
     data = {
         'msg': 'Hello World!',
-        'color': color
     }
 
     return json_response(data)
