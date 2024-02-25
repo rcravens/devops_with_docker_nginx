@@ -22,7 +22,7 @@ def json_response(data):
 @app.route('/index')
 def index():
     try:
-        f = open('/app/color.txt')
+        f = open('/app_blue/color.txt')
         color = f.read()
         f.close()
     except:

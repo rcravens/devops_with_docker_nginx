@@ -17,10 +17,10 @@ To scale up the app:
 
 `docker compose up -d --scale app=5 --no-recreate`
 
-
 To scale it back down the app:
 
 `docker compose up -d --scale app=1 --no-recreate`
+
 
 To quit the app:
 
