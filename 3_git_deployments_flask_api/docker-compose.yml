@@ -1,0 +1,37 @@
+version: '3'
+
+networks:
+  flask_app:
+    driver: bridge
+
+services:
+  app_blue:
+    build:
+      context: .
+      dockerfile: flask_api.dockerfile
+      args:
+        - GIT_REPO_URL=${GIT_REPO_URL}
+        - APP_VERSION=${APP_VERSION_BLUE}
+    networks:
+      - flask_app
+  app_green:
+    build:
+      context: .
+      dockerfile: flask_api.dockerfile
+      args:
+        - GIT_REPO_URL=${GIT_REPO_URL}
+        - APP_VERSION=${APP_VERSION_GREEN}
+    networks:
+      - flask_app
+
+  nginx:
+    container_name: nginx
+    build: nginx
+    ports:
+      - "80:80"
+    depends_on:
+      - app_green
+      - app_blue
+    networks:
+      - flask_app
+
