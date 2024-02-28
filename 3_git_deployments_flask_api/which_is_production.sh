@@ -4,7 +4,7 @@
 current=$(docker compose exec nginx ls -la /etc/nginx/nginx.conf)
 #echo $current
 
-# conditionally stage to the "non-production" color
+# echo out the production deployment
 if [[ $current = *"green"* ]]; then
   echo "production is GREEN"
 else
