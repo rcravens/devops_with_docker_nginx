@@ -18,6 +18,9 @@ The only difference in these versions is the value set for the `_version` elemen
 First copy and rename the `app/.env_example` file to `app/.env`. Then go to the two organizations and get API keys if
 you want the news and weather end-points to work.
 
+Second copy the `.env_example` to `.env`. The defaults in this file should be good to deploy version 1 of the example
+app to both BLUE & GREEN containers.
+
 ### Initial Deployment
 
 To get everything started:
