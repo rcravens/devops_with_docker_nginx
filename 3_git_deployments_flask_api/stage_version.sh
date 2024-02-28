@@ -11,9 +11,9 @@ current=$(docker compose exec nginx ls -la /etc/nginx/nginx.conf)
 # conditionally stage to the "non-production" color
 #   Note: if you previously scaled up, this will scale back down to a single instance
 if [[ $current = *"green"* ]]; then
-  echo "staging to ${APP_VERSION_BLUE} to BLUE"
+  echo "staging ${APP_VERSION_BLUE} to BLUE"
   docker compose up -d --build app_blue
 else
-  echo "staging to ${APP_VERSION_GREEN} to GREEN"
+  echo "staging ${APP_VERSION_GREEN} to GREEN"
   docker compose up -d --build app_green
 fi
